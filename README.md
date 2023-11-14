@@ -26,5 +26,12 @@ Coming soon to Google Play.
 ![space-short-high-score](https://github.com/danielle-h/space-short/assets/23185702/566ed54a-6489-419a-9426-805d897549e5)
 ![space-short-high-scores](https://github.com/danielle-h/space-short/assets/23185702/a70dcf35-4d07-4d73-b78f-ee5301408f3f)
 
+## Contribute
+If you want to fix a bug or contribute a feature, please submit a pull request.
+
+If you enjoyed the game, you can buy me a coffee :)
+
+<a href="https://www.buymeacoffee.com/369WkrTTU6" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 
 
