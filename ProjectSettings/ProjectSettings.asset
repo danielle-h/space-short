@@ -145,6 +145,7 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -809,7 +810,12 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 1
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: ENABLE_VOXELBUSTERS_ESSENTIAL_KIT
+    Standalone: ENABLE_VOXELBUSTERS_ESSENTIAL_KIT
+    WebGL: ENABLE_VOXELBUSTERS_ESSENTIAL_KIT
+    Windows Store Apps: ENABLE_VOXELBUSTERS_ESSENTIAL_KIT
+    iPhone: ENABLE_VOXELBUSTERS_ESSENTIAL_KIT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

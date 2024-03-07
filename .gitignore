@@ -33,6 +33,10 @@ Assets/StarfieldMaterials
 Assets/StarfieldMaterials.meta
 Assets/VolumetricLines
 Assets/VolumetricLines.meta
+Assets/Plugins/
+Assets/Plugins.meta
+Assets/ExternalDependencyManager/
+Assets/ExternalDependencyManager.meta
 
 # builds
 builds-webgl
