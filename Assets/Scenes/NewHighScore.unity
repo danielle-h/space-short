@@ -11618,6 +11618,7 @@ GameObject:
   - component: {fileID: 1591754695}
   - component: {fileID: 1591754694}
   - component: {fileID: 1591754698}
+  - component: {fileID: 1591754699}
   m_Layer: 5
   m_Name: Highscore Canvas
   m_TagString: Untagged
@@ -11723,6 +11724,18 @@ MonoBehaviour:
   highScoreScreen: {fileID: 1314014448}
   highScoreName: {fileID: 900676054}
   saveButton: {fileID: 1421443885}
+--- !u!114 &1591754699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591754693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a89038c5070994ebb6fffc0ba78891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   whatsappButton: {fileID: 80762009}
   twitterButton: {fileID: 1571039921}
   facebookButton: {fileID: 1719136965}
