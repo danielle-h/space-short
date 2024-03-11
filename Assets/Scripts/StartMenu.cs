@@ -2,11 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
 
 
 public class StartMenu : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
+    GameObject pauseMenuUI;
+
+    void Start(){
+        Input.backButtonLeavesApp = true;
+    }
+
+    // void Update(){
+        // bool backPressed = Keyboard.current.escapeKey.wasPressedThisFrame;
+        // if (backPressed){
+        //     Application.Quit();
+        // }
+    // }
+
+    void OnBack(){
+        //AndroidToast.ShowToast("pressed back");
+        Application.Quit();
+    }
 
 
     public void GoToHighscores()

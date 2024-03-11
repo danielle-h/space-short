@@ -20,6 +20,10 @@ public class HighscoreMenu : MonoBehaviour
 
     }
 
+    void OnBack(){
+        GoBackToGame();
+    }
+
       public void GoBackToGame()
     {
         SceneManager.LoadScene(GlobalConstants.START_SCENE_INDEX);

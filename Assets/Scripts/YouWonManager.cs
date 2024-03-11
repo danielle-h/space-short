@@ -10,13 +10,17 @@ public class YouWonManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
 
-    int sceneTime = 5;
+    //int sceneTime = 5;
     // Start is called before the first frame update
     void Start()
     {
         int score  = PlayerPrefs.GetInt(GlobalConstants.SCORE_KEY, 0);
         scoreText.SetText("Score: " + score);
         //StartCoroutine(NextScreen());
+    }
+
+    void OnBack(){
+        SceneManager.LoadScene(GlobalConstants.START_SCENE_INDEX);
     }
 
 

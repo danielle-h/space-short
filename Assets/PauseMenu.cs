@@ -70,8 +70,17 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    void OnBack(){
+        if (!isGamePaused){
+        Pause();
+        }
+        else {
+            GoToStart();
+        }
+    }
+
     public void SetMusicVolume(float volume)
-    {
+    { 
         
         myMixer.SetFloat("music", volume);
         PlayerPrefs.SetFloat("musicVolume", volume);

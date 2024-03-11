@@ -103,6 +103,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Navigate",
+            "id": "3246c02f-1cd2-48d4-aabb-24ed54f42496",
+            "actions": [
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "4b25345e-48aa-4f95-8385-77e32a910ecd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "20be701b-d0b2-409f-bc5f-07d74c8d5a41",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
