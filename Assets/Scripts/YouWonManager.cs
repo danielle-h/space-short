@@ -16,14 +16,14 @@ public class YouWonManager : MonoBehaviour
     {
         int score  = PlayerPrefs.GetInt(GlobalConstants.SCORE_KEY, 0);
         scoreText.SetText("Score: " + score);
-        StartCoroutine(NextScreen());
+        //StartCoroutine(NextScreen());
     }
 
 
 
-    private IEnumerator NextScreen()
+    public void NextScreen()
     {
-        yield return new WaitForSeconds(sceneTime);
+        //yield return new WaitForSeconds(sceneTime);
 
         int next = PlayerPrefs.GetInt(GlobalConstants.IS_HIGH_SCORE);
         if (next == 0)

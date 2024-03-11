@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -158,6 +158,7 @@ public class GameManager : MonoBehaviour
     public void GameOver(bool won = false)
     {
         gameOn = false;
+        PlayerPrefs.SetInt(GlobalConstants.SCORE_KEY, score);
         if (won)
         {
             //add to score

@@ -19,6 +19,9 @@ public class ShareManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //TODO toast on nonexistent, not cancelled
+        //TODO different text for you won and highscore
+        
          composerWhatsapp = SocialShareComposer.CreateInstance(SocialShareComposerType.WhatsApp);
         composerTwitter = SocialShareComposer.CreateInstance(SocialShareComposerType.Twitter);
         composerFacebook = SocialShareComposer.CreateInstance(SocialShareComposerType.Facebook);
