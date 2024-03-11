@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 297341280}
   - component: {fileID: 297341281}
   - component: {fileID: 297341282}
+  - component: {fileID: 297341283}
   m_Layer: 5
   m_Name: High score menu
   m_TagString: Untagged
@@ -242,9 +243,21 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 3246c02f-1cd2-48d4-aabb-24ed54f42496
+  m_DefaultActionMap: Navigate
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &297341283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297341279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c9783cc8d357a4596f0e7b19fe4866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &316037782
 GameObject:
   m_ObjectHideFlags: 0

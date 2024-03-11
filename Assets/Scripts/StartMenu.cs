@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 
 public class StartMenu : MonoBehaviour
 {
-    GameObject pauseMenuUI;
+    [SerializeField] GameObject pauseMenuUI;
 
     void Start(){
         Input.backButtonLeavesApp = true;
@@ -21,10 +21,7 @@ public class StartMenu : MonoBehaviour
         // }
     // }
 
-    void OnBack(){
-        //AndroidToast.ShowToast("pressed back");
-        Application.Quit();
-    }
+
 
 
     public void GoToHighscores()

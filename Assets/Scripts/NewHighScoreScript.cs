@@ -32,9 +32,6 @@ public class NewHighScoreScript : MonoBehaviour
 
     }
 
-    void OnBack() {
-        BackToStart();
-    }
 
 
     public void GetHighScoreName(string text)

@@ -19,12 +19,6 @@ public class YouWonManager : MonoBehaviour
         //StartCoroutine(NextScreen());
     }
 
-    void OnBack(){
-        SceneManager.LoadScene(GlobalConstants.START_SCENE_INDEX);
-    }
-
-
-
     public void NextScreen()
     {
         //yield return new WaitForSeconds(sceneTime);

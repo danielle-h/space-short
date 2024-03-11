@@ -151,6 +151,7 @@ public class PlayerController : MonoBehaviour
     void StartImpervious()
     {
         gameObject.SetActive(true);
+        FindObjectOfType<PlayerInput>().gameObject.SetActive(true);
         transform.position = startPos;
         impervious = true;
         StartCoroutine(Blink(imperviousTime));
@@ -232,6 +233,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
+                    //disable player input, otherwise doesn't work when reactivated
+                    FindObjectOfType<PlayerInput>().gameObject.SetActive(false);
                     gameObject.SetActive(false);
                     Invoke("StartImpervious", 1); // StartImpervious();
                 }

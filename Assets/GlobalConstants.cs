@@ -8,10 +8,11 @@
     
 
 
-    public static int START_SCENE_INDEX = 0;
-    public static int NEW_HIGHSCORE_SCENE_INDEX = 3;
-    public static int HIGHSCORE_SCENE_INDEX = 2;
-    public static int YOU_WON_INDEX = 4;
+    public const int START_SCENE_INDEX = 0;
+    public const  int NEW_HIGHSCORE_SCENE_INDEX = 3;
+    public const int HIGHSCORE_SCENE_INDEX = 2;
+    public const int YOU_WON_INDEX = 4;
+    public const int GAME_SCENE_INDEX = 1;
 
     public static int zPlayerRange = 12;
     public static int xPlayerRange = 13;

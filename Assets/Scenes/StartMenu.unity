@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 310586141}
   - component: {fileID: 310586142}
   - component: {fileID: 310586143}
+  - component: {fileID: 310586144}
   m_Layer: 5
   m_Name: Title Screen
   m_TagString: Untagged
@@ -539,6 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6ba02078b5066499f8e6ad79813904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1079500295}
 --- !u!114 &310586143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +572,18 @@ MonoBehaviour:
   m_DefaultActionMap: Navigate
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &310586144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310586140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c9783cc8d357a4596f0e7b19fe4866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &315549588
 GameObject:
   m_ObjectHideFlags: 0
