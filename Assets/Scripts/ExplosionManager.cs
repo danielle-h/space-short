@@ -12,7 +12,7 @@ public class ExplosionManager : MonoBehaviour
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         //audioSource = GetComponent<AudioSource>();
-        Debug.Log("got audio");
+        //Debug.Log("got audio");
         //audioSource.Play();
 
     }

@@ -38,6 +38,14 @@ Assets/Plugins.meta
 Assets/ExternalDependencyManager/
 Assets/ExternalDependencyManager.meta
 
+# unused assets
+Assets/amusedART/
+Assets/amusedART.meta
+Assets/Joystick Pack/
+Assets/Joystick Pack.meta
+Assets/LB3D/
+Assets/LB3D.meta
+
 # builds
 builds-webgl
 
@@ -100,4 +108,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-
+# release stuff
+*BackUpThisFolder_ButDontShipItWithYourGame/
+*mapping.txt
+*symbols.zip
