@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -151,7 +151,14 @@ public class PlayerController : MonoBehaviour
     void StartImpervious()
     {
         gameObject.SetActive(true);
-        FindObjectOfType<PlayerInput>().gameObject.SetActive(true);
+        PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+        foreach (PlayerInput playerInput in playerInputs)
+            {
+                if (playerInput.gameObject.name == "Player"){
+                    playerInput.gameObject.SetActive(true);
+                    break;
+                }
+            }
         transform.position = startPos;
         impervious = true;
         StartCoroutine(Blink(imperviousTime));
@@ -234,7 +241,14 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     //disable player input, otherwise doesn't work when reactivated
-                    FindObjectOfType<PlayerInput>().gameObject.SetActive(false);
+                    PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
+                    foreach (PlayerInput playerInput in playerInputs)
+                    {
+                        if (playerInput.gameObject.name == "Player"){
+                            playerInput.gameObject.SetActive(false);
+                            break;
+                        }
+                    }
                     gameObject.SetActive(false);
                     Invoke("StartImpervious", 1); // StartImpervious();
                 }
