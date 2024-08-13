@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
 {
     //movement
     private readonly float speed = 10;
-   // private float horizontalInput;
+    // private float horizontalInput;
     //private float verticalInput;
-    private  float xRange;
-    private  float zRange;
+    private float xRange;
+    private float zRange;
 
     //game parameters
     public bool gameOver = false;
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 startPos;
     public bool impervious = false;//TODO change to private
-    private int imperviousTime = 3;//TODO should blink or something
+    private int imperviousTime = 3;
     [SerializeField] GameObject spaceship;
 
     private Vector2 movement = new Vector2(0, 0);
@@ -62,8 +62,8 @@ public class PlayerController : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         shield.SetActive(false);
         startPos = transform.position;
+        movement = new Vector2(0, 0);
         StartImpervious();
-        //playerAudio = GetComponent<AudioSource>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
     }
@@ -76,9 +76,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnShoot(bool isMobile = false)
     {
-        
+
         //Debug.Log("onshoot");
-        if (Time.time > lastShot + (isMobile? mobileFireRate : fireRate))
+        if (Time.time > lastShot + (isMobile ? mobileFireRate : fireRate))
         {
             //Debug.Log(Time.time);
             lastShot = Time.time;
@@ -91,11 +91,11 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                //Instantiate(laserPrefab, transform.position, laserPrefab.transform.rotation);
+
                 GameObject laser = gameManager.playerLaserPool.Get();
                 laser.transform.position = transform.position;
                 //Debug.Log(laser.name);
-                //Debug.Log(laser.name);
+
 
 
             }
@@ -109,27 +109,25 @@ public class PlayerController : MonoBehaviour
     {
         //MovePlayer();
         String scheme = GetComponent<PlayerInput>().currentControlScheme;
+        Debug.Log(movement.x + " " + movement.y);
         if (scheme == "Keyboard")
         {
             transform.Translate((Vector3.right * movement[0] + Vector3.forward * movement[1]) * Time.deltaTime * speed);
         }
         else
         {
-            Vector3 position = Camera.main.ScreenToWorldPoint(movement);
-            position.y = transform.position.y;
-            transform.position = Vector3.MoveTowards(transform.position, position, Time.deltaTime*speed);
+            if (movement.x != 0 || movement.y != 0)
+            {
+                Vector3 position = Camera.main.ScreenToWorldPoint(movement);
+                position.y = transform.position.y;
+                transform.position = Vector3.MoveTowards(transform.position, position, Time.deltaTime * speed);
+            }
 
             OnShoot(true);
 
         }
 
         ConstrainPlayerPosition();
-        //shooot
-
-        /*if (Keyboard.current.spaceKey.wasReleasedThisFrame)
-        {
-            Shoot();
-        }*/
         //update powerups
         if (hasShield)
         {
@@ -150,15 +148,8 @@ public class PlayerController : MonoBehaviour
 
     void StartImpervious()
     {
-        gameObject.SetActive(true);
-        PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
-        foreach (PlayerInput playerInput in playerInputs)
-            {
-                if (playerInput.gameObject.name == "Player"){
-                    playerInput.gameObject.SetActive(true);
-                    break;
-                }
-            }
+        movement = new Vector2(0, 0);
+        spaceship.SetActive(true);// deactivating the player causes input to not work when reactivated
         transform.position = startPos;
         impervious = true;
         StartCoroutine(Blink(imperviousTime));
@@ -170,27 +161,13 @@ public class PlayerController : MonoBehaviour
         impervious = false;
     }
 
-   /*void OnMove(InputValue value)
-    {
-        Debug.Log("here");
-        Debug.Log(value.Get<Vector2>());
-    }*/
 
- 
     void OnMove(InputValue value)
     {
         //move on user input
-        /*horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        if (joystick.isActiveAndEnabled)
-        {
-            verticalInput = joystick.Vertical;
-            horizontalInput = joystick.Horizontal;
-        }*/
-
         movement = value.Get<Vector2>();
         //Debug.Log(movement);
-        //transform.Translate((Vector3.right * pressed[0] + Vector3.forward * pressed[1]) * Time.deltaTime * speed);
+
     }
 
     void ConstrainPlayerPosition()
@@ -221,11 +198,6 @@ public class PlayerController : MonoBehaviour
         {
             if (!hasShield && !impervious)
             {
-                //Destroy(gameObject);
-                //KillPlayer();
-                //gameOver = true;
-                //Debug.Log("Game over!");
-                //gameManager.GameOver();
                 gameManager.DecrementLives();
                 audioManager.PlaySFX(audioManager.playerExplosion);
 
@@ -238,16 +210,9 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    //disable player input, otherwise doesn't work when reactivated
-                    PlayerInput[] playerInputs = FindObjectsOfType<PlayerInput>();
-                    foreach (PlayerInput playerInput in playerInputs)
-                    {
-                        if (playerInput.gameObject.name == "Player"){
-                            playerInput.gameObject.SetActive(false);
-                            break;
-                        }
-                    }
-                    gameObject.SetActive(false);
+                    //deactivating spaceship instead of player to keep input working
+                    spaceship.SetActive(false);
+
                     Invoke("StartImpervious", 1); // StartImpervious();
                 }
             }
@@ -271,7 +236,7 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("HeartPowerup"))
         {
             Destroy(other.gameObject);
-           // Debug.Log("got heart");
+            // Debug.Log("got heart");
             gameManager.IncrementLives();
             audioManager.PlaySFX(audioManager.powerup);
 
@@ -323,32 +288,5 @@ public class PlayerController : MonoBehaviour
             hasPowerup = false;
         }
     }
-
-    //void KillPlayer()
-    //{
-
-    //    Instantiate(explosion, transform.position, explosion.transform.rotation);
-    //    audioManager.PlaySFX(audioManager.playerExplosion);
-    //    Debug.Log("exploding");
-    //    Destroy(gameObject);
-
-    //}
-
-    /*IEnumerator StopPowerup(bool isSheild)//TODO check and make sure calling this twice doesn't shorten the time
-    {
-        yield return new WaitForSeconds(powerupTime);
-        if (isSheild)
-        {
-            hasShield = false;
-            shield.SetActive(false);
-        }
-        else
-        {
-            hasPowerup = false;
-        }
-        //powerupEffect.Stop();
-    }*/
-
-
 
 }
