@@ -26,7 +26,7 @@ public class Boss1Controller : MonoBehaviour
     private GameManager gameManager;
     public HealthbarBehaviour healthbar;
     public GameObject powerup;
-    private double heartProbability = 0.1;
+    private double heartProbability = 0.07;
     public int numBosses = 1;
     public GameObject boss1;
     bool randomMovement = false;
@@ -38,6 +38,9 @@ public class Boss1Controller : MonoBehaviour
     AudioManager audioManager;
 
 
+    //less hearts
+    private float creationTime;
+
 
 
 
@@ -45,6 +48,7 @@ public class Boss1Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        creationTime = Time.time;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         animators = new Animator[numBosses];
         for (int i = 0; i < numBosses; i++) {
@@ -94,7 +98,7 @@ public class Boss1Controller : MonoBehaviour
             }
             rand = Random.Range(0.0f, 1.0f);
             //Debug.Log(rand);
-            if (rand < heartProbability)
+            if (rand < heartProbability && Time.time - creationTime > 10)//delay creation of hearts a bit to make it harder
             {
                 tmpPower = Instantiate(powerup, transform.position, powerup.transform.rotation);
             }

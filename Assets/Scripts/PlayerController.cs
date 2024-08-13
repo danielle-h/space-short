@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     private int imperviousTime = 3;//TODO should blink or something
     [SerializeField] GameObject spaceship;
 
-    private Vector2 movement;
+    private Vector2 movement = new Vector2(0, 0);
 
     //SFX
     AudioManager audioManager;
@@ -217,10 +217,8 @@ public class PlayerController : MonoBehaviour
     //destroy on enemy collision
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyLaser"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EnemyLaser") || other.gameObject.CompareTag("Boss"))
         {
-
-            //Debug.Log("conllided with enemy");
             if (!hasShield && !impervious)
             {
                 //Destroy(gameObject);

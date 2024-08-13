@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2945676225144028027}
   m_Layer: 0
   m_Name: Boss1
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,9 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104e00465be0170488981ae9a1019863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  xScale: 20
-  yScale: 10
   healthbar: {fileID: 963742946841285835}
   powerup: {fileID: 5432781521055446902, guid: 2a5010c59e6bc064f9e330546f1cff90, type: 3}
   numBosses: 1
