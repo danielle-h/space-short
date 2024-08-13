@@ -18,9 +18,14 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        //Debug.Log("start level is " + level);
+        //Debug.Log("start level is now " + level);
+        audioManager = GameObject.FindGameObjectWithTag("Audio").
+        GetComponent<AudioManager>();
+        //Debug.Log("audioManager " + audioManager.name);
         SpawnLevel();//TODO maybe update should be in gamemanager?
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        //GameObject test = GameObject.FindGameObjectWithTag("Audio");
+       
+        
         //audioSource = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().GetComponent<AudioSource>();
         //audioSource.clip = mainMusic;
         //audioSource.loop = true;
