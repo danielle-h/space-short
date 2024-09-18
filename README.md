@@ -17,7 +17,7 @@ Files of most interest are [Scenes](https://github.com/danielle-h/space-short/tr
 ## Game
 Play online [here](https://danielle-honig.com/space-short).
 
-Coming soon to Google Play.
+[Download](https://play.google.com/store/apps/details?id=com.HoneystoneGames.SpaceShort&hl=en_US) from Google Play.
 
 ### Screenshots
 ![space-short-screenshot-1](https://github.com/danielle-h/space-short/assets/23185702/e120608e-bf28-4238-89dd-c6f54079fa93)
